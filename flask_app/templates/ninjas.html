@@ -18,12 +18,11 @@
                 <a href="/dojos" class="badge badge-dark">Dojos</a>
             </h4>
         </div>
-        <hr>
         <!-- New Ninja FORM -->
         <form action="/ninjas/new" method="post" class="m-3">
             <!-- Dojo -->
-            <select name="dojo" class="form-control mx-auto mb-4" aria-label="Default select example">
-                <option selected>Dojo:</option>
+            <p>Select Dojo:</p>
+            <select name="dojo" class="form-control mx-auto" aria-label="Default select example">
                 {% for dojo in all_dojos %}
                 <option value="{{dojo.id}}">{{dojo.name}}</option>
                 {%endfor%}

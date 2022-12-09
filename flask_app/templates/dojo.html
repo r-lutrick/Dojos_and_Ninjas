@@ -12,17 +12,25 @@
 
 <body>
     <div class="container shadow py-4 my-5 bg-white rounded">
-        <table class="table table-striped border mb-4">
-            <thead>
+        <div class="bg-dark d-flex p-2 align-items-center justify-content-between">
+            <h1 style="color: white;">
+                {{one_dojo.name}} Ninjas
+            </h1>
+            <h4>
+                <a href="/dojos" class="badge badge-dark">Dojos</a>
+            </h4>
+        </div>
+        <table class="table border mb-4">
+            <thead class="table-secondary m-2">
                 <tr>
-                    <th class="table-dark h1 m-2">
-                        <!-- Dojo -->
-                        <div class="d-flex align-items-center justify-content-between">
-                            {{one_dojo.name}} Dojo
-                            <h4>
-                                <a href="/dojos" class="badge badge-dark">Dojos</a>
-                            </h4>
-                        </div>
+                    <th>
+                        First Name
+                    </th>
+                    <th>
+                        Last Name
+                    </th>
+                    <th>
+                        Age
                     </th>
                 </tr>
             </thead>
@@ -32,12 +40,13 @@
                 <tr>
                     <td>
                         {{ninja.first_name}}
-                        <!-- Remove Option -->
-                        <button type="submit" class="close" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
                     </td>
-
+                    <td>
+                        {{ninja.last_name}}
+                    </td>
+                    <td>
+                        {{ninja.age}}
+                    </td>
                 </tr>
                 {%endfor%}
             </tbody>
