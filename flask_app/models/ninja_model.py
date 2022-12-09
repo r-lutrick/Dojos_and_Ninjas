@@ -3,6 +3,7 @@ from flask_app import DATABASE
 # !!! Import controllers FILE to prevent circular import !!!
 
 
+# Model for instanciating Ninja data
 class Ninja:
     def __init__(self, data):
         self.id = data['id']
@@ -13,6 +14,7 @@ class Ninja:
         self.updated_at = data['updated_at']
         self.dojo_id = data['dojo_id']
 
+    # Class Method for adding a ninja to the DB
     @classmethod
     def add_one(cls, data):
         query = """

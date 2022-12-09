@@ -23,6 +23,7 @@
                 <tbody>
                     <tr>
                         <td>
+                            <!-- New Dojo FORM -->
                             <form action="/dojos/new" method="POST">
                                 <div class="mb-4">
                                     <label for="dojo_name" class="form-label">Name:</label>
@@ -46,7 +47,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Get all dojos -->
+                    <!-- List all Dojo Names -->
                     {% for dojo in all_dojos %}
                     <tr>
                         <td>

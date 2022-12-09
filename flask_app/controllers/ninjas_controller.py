@@ -5,15 +5,15 @@ from flask_app.models import ninja_model as nm
 from flask_app.models import dojo_model as dm
 
 
-@app.route('/ninjas')
 # Add and view Ninja Page
+@app.route('/ninjas')
 def ninjas():
     db_dojos = dm.Dojo.get_all()
     return render_template('ninjas.html', all_dojos=db_dojos)
 
 
-@app.route('/ninjas/new', methods=['POST'])
 # Add Ninja to respective Dojo
+@app.route('/ninjas/new', methods=['POST'])
 def new_ninja():
     id = request.form["dojo"]
     data = {

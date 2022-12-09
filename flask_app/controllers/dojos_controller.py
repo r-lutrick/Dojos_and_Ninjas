@@ -4,15 +4,15 @@ from flask_app import app
 from flask_app.models import dojo_model as dm
 
 
-@app.route('/dojos')
 # Add and view Dojos
+@app.route('/dojos')
 def dojos():
     db_dojos = dm.Dojo.get_all()
     return render_template('dojos.html', all_dojos=db_dojos)
 
 
-@app.route('/dojos/new', methods=['POST'])
 # Add Dojo to DB
+@app.route('/dojos/new', methods=['POST'])
 def new_dojo():
     data = {
         'name': request.form["dojo_name"]
@@ -21,8 +21,8 @@ def new_dojo():
     return redirect('/dojos')
 
 
-@app.route('/dojos/<int:id>/view')
 # View Dojo with Ninjas
+@app.route('/dojos/<int:id>/view')
 def view_dojo(id):
     data = {
         'id': id

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dojos</title>
+    <title>New Ninja</title>
     <!-- Import Cascade Style Sheet (CSS) -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
@@ -19,11 +19,11 @@
             </h4>
         </div>
         <hr>
+        <!-- New Ninja FORM -->
         <form action="/ninjas/new" method="post" class="m-3">
-            <!-- Dojo List -->
+            <!-- Dojo -->
             <select name="dojo" class="form-control mx-auto mb-4" aria-label="Default select example">
                 <option selected>Dojo:</option>
-                <!-- List builder -->
                 {% for dojo in all_dojos %}
                 <option value="{{dojo.id}}">{{dojo.name}}</option>
                 {%endfor%}
@@ -44,6 +44,7 @@
                 <input name="age" type="number" class="form-control" id="age" placeholder="Age">
             </div>
             <hr>
+            <!-- Add -->
             <button type="submit" class="btn btn-secondary">Add Ninja</button>
         </form>
     </div>

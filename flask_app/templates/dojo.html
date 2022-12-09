@@ -5,19 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dojos</title>
+    <title>{{one_dojo.name}} Dojo</title>
     <!-- Import Cascade Style Sheet (CSS) -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
-
-    <!-- Dojo -->
     <div class="container shadow py-4 my-5 bg-white rounded">
         <table class="table table-hover table-striped border mb-4">
             <thead>
                 <tr>
                     <th class="table-dark h1 m-2">
+                        <!-- Dojo -->
                         {{one_dojo.name}} Dojo
                     </th>
                 </tr>
@@ -33,6 +32,7 @@
                 {%endfor%}
             </tbody>
         </table>
+        <!-- Footer for navigation -->
         <a href="/dojos" class="badge badge-secondary">Dojos</a> |
         <a href="/ninjas" class="badge badge-secondary">Add Ninja</a>
     </div>
