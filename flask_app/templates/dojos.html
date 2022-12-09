@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojos</title>
+    <!-- Import Cascade Style Sheet (CSS) -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="container d-flex my-5">
+        <!-- Col 1 --- Add Dojo -->
+        <div class="container shadow mx-4 p-3 mb-5 bg-white rounded">
+            <table class="table border mb-4">
+                <thead>
+                    <th class="table-dark">
+                        <h1 class="m-2">New Dojo</h1>
+                    </th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <form action="/dojos/new" method="POST">
+                                <div class="mb-4">
+                                    <label for="dojo_name" class="form-label">Name:</label>
+                                    <input type="text" class="form-control mb-4" id="dojo_name" name="dojo_name">
+                                </div>
+                                <button type="submit" class="btn btn-secondary">Create</button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- Col 2 --- Dojo Table -->
+        <div class="container shadow p-3 mb-5 bg-white rounded">
+            <table class="table table-striped table-hover border mb-4">
+                <thead>
+                    <tr>
+                        <th class="table-dark">
+                            <h1 class="m-2">Dojos</h1>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Get all dojos -->
+                    {% for dojo in all_dojos %}
+                    <tr>
+                        <td>
+                            <a href="/dojos/{{dojo.id}}/view" style="color: black;">{{dojo.name}}</a>
+                        </td>
+                    </tr>
+                    {%endfor%}
+                </tbody>
+            </table>
+            <a href="/ninjas" class="badge badge-secondary">Add Ninja</a>
+        </div>
+    </div>
+    <!-- Import JavaScript  -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>

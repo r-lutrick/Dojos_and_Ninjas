@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojos</title>
+    <!-- Import Cascade Style Sheet (CSS) -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="container my-5 w-50 shadow py-4 mb-5 bg-white rounded">
+        <div class="bg-dark px-2 d-flex align-items-center justify-content-between">
+            <h1 class="p-3" style="color: white;">New Ninja</h1>
+            <h4>
+                <a href="/dojos" class="badge badge-dark">Dojos</a>
+            </h4>
+        </div>
+        <hr>
+        <form action="/ninjas/new" method="post" class="m-3">
+            <!-- Dojo List -->
+            <select name="dojo" class="form-control mx-auto mb-4" aria-label="Default select example">
+                <option selected>Dojo:</option>
+                <!-- List builder -->
+                {% for dojo in all_dojos %}
+                <option value="{{dojo.id}}">{{dojo.name}}</option>
+                {%endfor%}
+            </select>
+            <!-- First Name -->
+            <div class="form-floating mx-auto">
+                <label for="first_name"></label>
+                <input type="text" class="form-control" id="first_name" placeholder="First Name" name="first_name">
+            </div>
+            <!-- Last name -->
+            <div class="form-floating mx-auto">
+                <label for="last_name"></label>
+                <input name="last_name" type="text" class="form-control" id="last_name" placeholder="Last Name">
+            </div>
+            <!-- Age -->
+            <div class="form-floating mx-auto">
+                <label for="age"></label>
+                <input name="age" type="number" class="form-control" id="age" placeholder="Age">
+            </div>
+            <hr>
+            <button type="submit" class="btn btn-secondary">Add Ninja</button>
+        </form>
+    </div>
+
+    <!-- Import JavaScript  -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>
