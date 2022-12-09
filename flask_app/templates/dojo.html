@@ -12,12 +12,17 @@
 
 <body>
     <div class="container shadow py-4 my-5 bg-white rounded">
-        <table class="table table-hover table-striped border mb-4">
+        <table class="table table-striped border mb-4">
             <thead>
                 <tr>
                     <th class="table-dark h1 m-2">
                         <!-- Dojo -->
-                        {{one_dojo.name}} Dojo
+                        <div class="d-flex align-items-center justify-content-between">
+                            {{one_dojo.name}} Dojo
+                            <h4>
+                                <a href="/dojos" class="badge badge-dark">Dojos</a>
+                            </h4>
+                        </div>
                     </th>
                 </tr>
             </thead>
@@ -37,8 +42,7 @@
                 {%endfor%}
             </tbody>
         </table>
-        <!-- Footer for navigation -->
-        <a href="/dojos" class="badge badge-secondary">Dojos</a> |
+        <!-- Add ninja -->
         <a href="/ninjas" class="badge badge-secondary">Add Ninja</a>
     </div>
 
