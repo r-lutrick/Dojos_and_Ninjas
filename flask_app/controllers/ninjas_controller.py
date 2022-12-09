@@ -1,6 +1,6 @@
 from flask import render_template, redirect, request, session
 from flask_app import app
-# !!! Import model CLASSES to avoid circular import !!!
+# !!! Import FILES to avoid circular import !!!
 from flask_app.models import ninja_model as nm
 from flask_app.models import dojo_model as dm
 

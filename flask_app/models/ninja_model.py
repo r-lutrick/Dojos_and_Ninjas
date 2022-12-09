@@ -1,6 +1,6 @@
 from flask_app.config.mysqlconnection import MySQLConnection
 from flask_app import DATABASE
-# !!! Import controllers FILE to prevent circular import !!!
+# !!! Import FILES to prevent circular import !!!
 
 
 # Model for instanciating Ninja data
