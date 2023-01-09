@@ -5,6 +5,7 @@ from flask_app.models import dojo_model as dm
 
 
 # Add and view Dojos
+@app.route('/')
 @app.route('/dojos')
 def dojos():
     db_dojos = dm.Dojo.get_all()
